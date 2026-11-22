@@ -1,228 +1,55 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Horticulture Crop Care Guide – BV Nagar, Nellore</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@500;700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#123d2b">
+<title>HortiCare | Sree Venkateswara College of Engineering</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#f2f6ef;--surface:#ffffff;--ink:#1d2a21;--muted:#52635a;--leaf:#2c6b3f;--leaf-d:#1b4a2b;--bloom:#c3232d;--soil:#4a3426;--line:#d5e0d3;--tint:#e3eddf;color-scheme:light}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121a15;--surface:#1b261f;--ink:#e8f0e9;--muted:#a3b5a8;--leaf:#6fc287;--leaf-d:#8fd6a3;--bloom:#ff6b73;--soil:#d9b9a0;--line:#2d3d33;--tint:#223228;color-scheme:dark}}
-:root[data-theme="dark"]{--bg:#121a15;--surface:#1b261f;--ink:#e8f0e9;--muted:#a3b5a8;--leaf:#6fc287;--leaf-d:#8fd6a3;--bloom:#ff6b73;--soil:#d9b9a0;--line:#2d3d33;--tint:#223228;color-scheme:dark}
-*{box-sizing:border-box}
-:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px)}
-body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 "Nunito Sans",system-ui,sans-serif}
-h1,h2,h3{font-family:Bitter,Georgia,serif;line-height:1.2;margin:0 0 .5em;color:var(--leaf-d)}
-h1{font-size:clamp(2.2rem,6vw,3.6rem);font-weight:700}
-h2{font-size:clamp(1.6rem,3.5vw,2.2rem)}
-h3{font-size:1.2rem}
-p{margin:0 0 1em;max-width:68ch}
-a{color:var(--leaf)}
-:focus-visible{outline:3px solid var(--bloom);outline-offset:2px}
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--surface);z-index:11}
-header{position:sticky;top:env(safe-area-inset-top,0px);background:var(--surface);border-bottom:1px solid var(--line);z-index:10}
-.bar{max-width:1080px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.6rem 1.25rem;flex-wrap:wrap}
-.brand{font:700 1.05rem Bitter,serif;color:var(--leaf-d);text-decoration:none}
-nav{display:flex;gap:.25rem;flex-wrap:wrap}
-nav a{padding:.4rem .8rem;border-radius:999px;text-decoration:none;color:var(--ink);font-weight:600;font-size:.95rem}
-nav a:hover{background:var(--tint)}
-section{max-width:1080px;margin:auto;padding:3.5rem 1.25rem}
-.hero{display:grid;grid-template-columns:1.2fr 1fr;gap:2.5rem;align-items:center;padding-top:3rem}
-.hero p.lead{font-size:1.2rem;color:var(--muted)}
-.btns{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1.25rem}
-.btn{display:inline-block;padding:.7rem 1.2rem;border-radius:8px;font-weight:700;text-decoration:none;border:2px solid var(--leaf);background:var(--leaf);color:#fff;cursor:pointer;font:700 1rem "Nunito Sans",sans-serif}
-.btn.alt{background:transparent;color:var(--leaf)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .btn{color:#10200f}:root:not([data-theme="light"]) .btn.alt{color:var(--leaf)}}
-.finger{background:var(--surface);border:1px solid var(--line);border-left:6px solid var(--bloom);border-radius:6px;padding:1.5rem;position:relative}
-.finger svg{position:absolute;right:1rem;top:-2.2rem;width:90px;height:90px}
-.finger h2{font-size:1.3rem}
-.finger ul{margin:.5rem 0 0;padding-left:1.1rem}
-.sub{color:var(--muted)}
-.tabs{display:flex;gap:.5rem;flex-wrap:wrap;margin:1.25rem 0}
-.tab,.chip{padding:.5rem 1rem;border:2px solid var(--line);border-radius:999px;background:var(--surface);color:var(--ink);font:600 1rem "Nunito Sans",sans-serif;cursor:pointer}
-.tab[aria-selected="true"],.chip[aria-pressed="true"]{background:var(--leaf);border-color:var(--leaf);color:#fff}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .tab[aria-selected="true"],:root:not([data-theme="light"]) .chip[aria-pressed="true"]{color:#10200f}}
-.panel{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1.5rem}
-dl{display:grid;grid-template-columns:9rem 1fr;gap:.75rem 1.25rem;margin:0}
-dt{font-weight:700;color:var(--soil)}
-dd{margin:0}
-.note{background:var(--tint);border-radius:6px;padding:.8rem 1rem;margin-top:1.25rem;font-size:.97rem}
-select,input,textarea{width:100%;padding:.7rem .8rem;border:2px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink);font:400 1rem "Nunito Sans",sans-serif}
-label{font-weight:700;display:block;margin:.9rem 0 .3rem}
-.result{margin-top:1.25rem;display:none}
-.result.on{display:block}
-.result h3{margin-top:0}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:1rem;margin-top:1.25rem}
-figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:6px;overflow:hidden}
-.ph{aspect-ratio:4/3;background:var(--tint);display:grid;place-items:center;color:var(--muted);font-size:.9rem;text-align:center;padding:.5rem}
-.ph img{width:100%;height:100%;object-fit:cover;display:block}
-figcaption{padding:.6rem .8rem;font-size:.92rem;color:var(--muted)}
-ol.weeks{list-style:none;margin:1.25rem 0 0;padding:0;border-left:3px solid var(--leaf)}
-ol.weeks li{padding:0 0 1.1rem 1.25rem;position:relative}
-ol.weeks li::before{content:"";position:absolute;left:-9px;top:.45rem;width:15px;height:15px;border-radius:50%;background:var(--bloom)}
-ol.weeks b{display:block;color:var(--leaf-d)}
-footer{border-top:1px solid var(--line);background:var(--surface);text-align:center;padding:1.5rem 1.25rem;color:var(--muted);font-size:.95rem}
-@media (max-width:760px){.hero{grid-template-columns:1fr}.finger{margin-top:1.5rem}dl{grid-template-columns:1fr;gap:.15rem}dt{margin-top:.6rem}}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-.ph {
-  aspect-ratio: 4 / 3;
-  overflow: hidden;
-  padding: 0;
-  background: #eaf1e7;
-}
-
-.ph img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
+:root{--green:#123d2b;--green2:#1d583d;--leaf:#477d4c;--gold:#c7a45b;--cream:#f7f6ef;--ink:#203128;--muted:#69776d;--white:#fff;--line:#e4e7dc;--shadow:0 18px 55px rgba(20,50,34,.11)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:'DM Sans',sans-serif;line-height:1.65}a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}.wrap{width:min(1160px,calc(100% - 40px));margin:auto}
+.topbar{background:var(--green);color:#fff}.top-inner{min-height:86px;display:flex;align-items:center;gap:18px}.logo{width:68px;height:68px;object-fit:contain;background:#fff;border-radius:50%;padding:3px;flex:none}.college{line-height:1.3}.college strong{display:block;font-size:15px;letter-spacing:.07em}.college span{font-size:11px;color:#e0d9c4;letter-spacing:.13em;text-transform:uppercase}.top-tag{margin-left:auto;color:#e9d8a9;font-size:12px;letter-spacing:.12em;text-transform:uppercase;text-align:right}
+.nav{background:#fff;box-shadow:0 4px 18px #142f2010;position:sticky;top:0;z-index:20}.nav-inner{display:flex;align-items:center;justify-content:space-between;min-height:62px}.brand{font-family:'Playfair Display',serif;font-weight:800;color:var(--green);font-size:24px}.brand em{font-style:normal;color:var(--gold)}.navlinks{display:flex;gap:28px;align-items:center}.navlinks a{font-size:13px;font-weight:700;color:#405449}.navlinks a:hover{color:var(--leaf)}.menu{display:none;border:0;background:none;color:var(--green);font-size:25px}
+.hero{min-height:560px;display:grid;grid-template-columns:1fr 1fr;background:var(--green);color:white;overflow:hidden}.hero-copy{padding:85px max(40px,calc((100vw - 1160px)/2)) 80px max(40px,calc((100vw - 1160px)/2));padding-right:35px;align-self:center}.eyebrow{color:#e4c77e;font-size:11px;font-weight:800;letter-spacing:.22em;text-transform:uppercase}.hero h1{font:800 clamp(42px,5vw,68px)/1.08 'Playfair Display',serif;margin:18px 0 20px;max-width:620px}.hero h1 span{color:#e1c47d}.hero p{max-width:520px;color:#d7e3d9;font-size:16px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{border:1px solid var(--gold);background:var(--gold);color:#142f20;padding:13px 22px;border-radius:4px;font-weight:800;font-size:13px;display:inline-flex;align-items:center;justify-content:center}.btn.outline{background:transparent;color:#fff;border-color:#d5c18c}.hero-art{min-height:560px;background:linear-gradient(90deg,#123d2b 0%,#123d2b00 32%),url('https://images.unsplash.com/photo-1497250681960-ef046c08a56e?auto=format&fit=crop&w=1400&q=85') center/cover;position:relative}.hero-art:after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,#143e2a20,#091f15aa)}
+.stats{background:#fff;border-bottom:1px solid var(--line)}.stats-grid{display:grid;grid-template-columns:repeat(3,1fr);padding:23px 0}.stat{text-align:center;border-right:1px solid var(--line)}.stat:last-child{border:0}.stat b{display:block;color:var(--green);font:700 26px 'Playfair Display',serif}.stat span{color:var(--muted);font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700}
+section.content{padding:86px 0}.section-head{text-align:center;max-width:720px;margin:0 auto 42px}.kicker{color:var(--leaf);font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:800}.section-head h2{font:700 clamp(30px,4vw,43px)/1.2 'Playfair Display',serif;color:var(--green);margin:10px 0}.section-head p{color:var(--muted);margin:0}
+.projects{display:grid;grid-template-columns:1fr 1fr;gap:24px}.project-card{background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);overflow:hidden}.project-image{height:245px;position:relative;background-size:cover;background-position:center}.project-image:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#102d20aa,transparent 65%)}.project-image .number{position:absolute;z-index:1;bottom:18px;left:22px;color:#fff;font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase}.project-body{padding:28px}.project-body h3{font:700 27px 'Playfair Display',serif;color:var(--green);margin:0 0 10px}.project-body p{color:var(--muted);font-size:14px;margin:0 0 18px}.meta{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:22px}.pill{background:#edf3eb;color:var(--green2);padding:6px 10px;font-size:11px;font-weight:800;letter-spacing:.04em}.project-body .btn{padding:11px 18px}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}.about-img{height:420px;background:url('https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?auto=format&fit=crop&w=1000&q=85') center/cover;border-radius:3px;box-shadow:var(--shadow)}.about-copy h2{font:700 40px/1.15 'Playfair Display',serif;color:var(--green);margin:10px 0 18px}.about-copy p{color:var(--muted);font-size:15px}.checklist{padding:0;list-style:none;margin:22px 0}.checklist li{margin:10px 0;color:#3e5948;font-weight:600;font-size:14px}.checklist li:before{content:"✦";color:var(--gold);margin-right:10px}
+.team{background:#eef1e8}.team-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}.member{background:#fff;padding:22px 15px;text-align:center;border:1px solid #e1e6db}.avatar{width:54px;height:54px;border-radius:50%;background:#e5eddf;color:var(--green);display:grid;place-items:center;margin:0 auto 13px;font:700 19px 'Playfair Display',serif}.member b{display:block;color:var(--green);font-size:13px}.member span{display:block;color:var(--muted);font-size:11px;margin-top:5px}
+.guide{background:var(--green);color:#fff}.guide .section-head h2{color:#fff}.guide .section-head p{color:#d4e0d6}.guide-box{background:#fff;color:var(--ink);padding:30px;display:grid;grid-template-columns:1fr 1fr;gap:24px}.guide-box h3{font:700 22px 'Playfair Display',serif;color:var(--green);margin:0 0 8px}.guide-box p{font-size:14px;color:var(--muted);margin:0}.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.gallery-grid img{width:100%;height:230px;object-fit:cover;background:#e8eee5}.gallery-note{font-size:12px;color:var(--muted);text-align:center;margin-top:15px}
+footer{background:#0c2c1e;color:#d6e0d8;padding:40px 0;text-align:center}footer img{width:58px;height:58px;object-fit:contain;background:#fff;border-radius:50%;padding:3px}footer p{font-size:12px;color:#b6c8bb;margin:10px 0 0}
+.detail{display:none;min-height:70vh;padding:60px 0}.detail.active{display:block}.detail h2{font:700 40px 'Playfair Display',serif;color:var(--green)}.detail .back{margin-bottom:25px;background:none;border:1px solid var(--green);padding:10px 16px;color:var(--green);font-weight:700}.weeks-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}.week-card{background:#fff;padding:23px;border:1px solid var(--line)}.week-card small{color:var(--leaf);font-weight:800;letter-spacing:.12em}.week-card h3{font:700 20px 'Playfair Display',serif;color:var(--green);margin:8px 0}.week-card p{font-size:13px;color:var(--muted);margin:0}
+@media(max-width:800px){.top-tag{display:none}.hero{grid-template-columns:1fr}.hero-copy{padding:65px 25px}.hero-art{min-height:300px}.navlinks{display:none;position:absolute;top:62px;left:0;right:0;background:white;padding:18px 25px;flex-direction:column;align-items:flex-start;box-shadow:var(--shadow)}.navlinks.open{display:flex}.menu{display:block}.projects,.about-grid{grid-template-columns:1fr}.about-img{height:300px}.team-grid{grid-template-columns:repeat(2,1fr)}.weeks-grid{grid-template-columns:1fr 1fr}.gallery-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.wrap{width:min(100% - 28px,1160px)}.top-inner{min-height:72px}.logo{width:54px;height:54px}.college strong{font-size:12px}.college span{font-size:9px}.stats-grid{padding:17px 0}.stat b{font-size:22px}.stat span{font-size:9px}.content{padding:60px 0!important}.project-image{height:195px}.project-body{padding:22px}.team-grid{grid-template-columns:1fr 1fr}.weeks-grid,.gallery-grid{grid-template-columns:1fr}.gallery-grid img{height:250px}.guide-box{grid-template-columns:1fr;padding:22px}.hero h1{font-size:43px}}
 </style>
 </head>
 <body>
-<header><div class="bar"><a class="brand" href="#home">Horticulture Crop Care Guide</a>
-<nav aria-label="Sections"><a href="#home">Home</a><a href="#crops">Crop guide</a><a href="#pests">Pest helper</a><a href="#journal">Field journal</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a></nav></div></header>
-<main>
-<section id="home" class="hero">
-<div>
-<h1>Healthy plants start with the soil in your hand.</h1>
-<p class="lead">A simple guide to growing banana, citrus, star fruit and anthurium, built from six weeks of work in a horticulture garden and nursery in BV Nagar, Nellore.</p>
-<div class="btns"><a class="btn" href="#crops">Open the crop guide</a><a class="btn alt" href="#pests">Check a plant problem</a></div>
-<p class="sub" style="margin-top:1.25rem">Community Service Project · Sree Venkateswara College of Engineering, Nellore · Yellasiri Ramu (24JNA05802) · Guide: Mr. K. Harsha Vardhan</p>
+<div id="homePage">
+<div class="topbar"><div class="wrap top-inner"><img class="logo" src="assets/svcn-logo.jpg" alt="SVCN college logo"><div class="college"><strong>SREE VENKATESWARA COLLEGE OF ENGINEERING</strong><span>Building the Future · Nellore</span></div><div class="top-tag">Community Service Project<br>Academic Year 2026</div></div></div>
+<div class="nav"><div class="wrap nav-inner"><a class="brand" href="#home">HORTI<em>CARE</em></a><button class="menu" aria-label="Open menu" onclick="document.querySelector('.navlinks').classList.toggle('open')">☰</button><nav class="navlinks"><a href="#home">Home</a><a href="#projects">Projects</a><a href="#about">About</a><a href="#team">Our Team</a><a href="#gallery">Gallery</a></nav></div></div>
+<header class="hero" id="home"><div class="hero-copy"><div class="eyebrow">Cultivating knowledge · Growing a greener tomorrow</div><h1>Growing a better future through <span>Horticulture.</span></h1><p>A community-focused learning initiative exploring plant cultivation, sustainable practices and practical crop care through hands-on horticulture work.</p><div class="actions"><a class="btn" href="#projects">Explore Our Projects</a><a class="btn outline" href="#about">Discover HortiCare</a></div></div><div class="hero-art" role="img" aria-label="Lush green plants and flowers"></div></header>
+<div class="stats"><div class="wrap stats-grid"><div class="stat"><b>08 Weeks</b><span>Learning & field work</span></div><div class="stat"><b>02 Projects</b><span>Main + mini project</span></div><div class="stat"><b>05 Students</b><span>Collaborative team</span></div></div></div>
+<section class="content" id="projects"><div class="wrap"><div class="section-head"><div class="kicker">Our work</div><h2>Projects that grow knowledge</h2><p>Explore our six-week main project and the two-week crop-care guide mini project.</p></div><div class="projects">
+<article class="project-card"><div class="project-image" style="background-image:url('https://images.unsplash.com/photo-1497250681960-ef046c08a56e?auto=format&fit=crop&w=1000&q=85')"><span class="number">Main Project · 6 Weeks</span></div><div class="project-body"><h3>Horticulture</h3><p>Practical exposure to horticultural cultivation, nursery practices, plant maintenance, soil care, irrigation and sustainable growing methods.</p><div class="meta"><span class="pill">Field Experience</span><span class="pill">Plant Cultivation</span><span class="pill">6 Weeks</span></div><button class="btn" onclick="openDetail('main')">Explore Main Project</button></div></article>
+<article class="project-card"><div class="project-image" style="background-image:url('https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=1000&q=85')"><span class="number">Mini Project · 2 Weeks</span></div><div class="project-body"><h3>Horticulture Crop Care Guide</h3><p>A simple digital guide introducing crop care practices, watering, nutrition, plant health monitoring and eco-friendly ways to care for plants.</p><div class="meta"><span class="pill">Digital Guide</span><span class="pill">Crop Care</span><span class="pill">2 Weeks</span></div><button class="btn" onclick="openDetail('mini')">Explore Mini Project</button></div></article>
+</div></div></section>
+<section class="content" id="about"><div class="wrap about-grid"><div class="about-img" role="img" aria-label="Green nursery plants"></div><div class="about-copy"><div class="kicker">About the initiative</div><h2>Learning from nature. Applying it in the community.</h2><p>HortiCare presents our Community Service Project journey in horticulture. It brings together practical exposure, observation and digital learning to encourage responsible plant care and sustainable cultivation.</p><ul class="checklist"><li>Hands-on horticulture learning</li><li>Awareness of sustainable cultivation</li><li>Plant health and crop-care knowledge</li><li>Digital presentation of project outcomes</li></ul></div></div></section>
+<section class="content team" id="team"><div class="wrap"><div class="section-head"><div class="kicker">The people behind the project</div><h2>Meet our team</h2><p>Community Service Project team · CSE</p></div><div class="team-grid">
+<div class="member"><div class="avatar">YR</div><b>Y. Ramu</b><span>24JNA05802</span></div><div class="member"><div class="avatar">YL</div><b>Y. Lokesh</b><span>24JNA05794</span></div><div class="member"><div class="avatar">PI</div><b>P. Imran</b><span>25JNA05509</span></div><div class="member"><div class="avatar">VB</div><b>V. Balaji</b><span>24JNA05779</span></div><div class="member"><div class="avatar">VP</div><b>V. Pradeep Kumar Reddy</b><span>24JNA05787</span></div>
+</div><p style="text-align:center;color:#63756a;font-size:13px;margin:28px 0 0">Faculty Guide: <strong>Mr. K. Harsha Vardhan</strong></p></div></section>
+<section class="content guide"><div class="wrap"><div class="section-head"><div class="kicker">Mini project highlight</div><h2>Horticulture Crop Care Guide</h2><p>Practical knowledge for healthier plants and better growing habits.</p></div><div class="guide-box"><div><h3>Care for every stage</h3><p>Understand the essentials of planting, watering, soil preparation, nutrition and routine maintenance to support healthy plant growth.</p></div><div><h3>Observe. Identify. Care.</h3><p>Learn to notice common plant stress signs, monitor plant health and choose responsible first steps for crop care.</p></div></div></div></section>
+<section class="content" id="gallery"><div class="wrap"><div class="section-head"><div class="kicker">Project memories</div><h2>From our field work</h2><p>Selected photographs from the six-week horticulture project.</p></div><div class="gallery-grid" id="galleryGrid"></div><p class="gallery-note">Photographs are loaded from the existing project image collection.</p></div></section>
+<footer><img src="assets/svcn-logo.jpg" alt="SVCN logo"><p><strong>Sree Venkateswara College of Engineering</strong><br>HortiCare · Community Service Project · 2026</p></footer>
 </div>
-<aside class="finger">
-<svg viewBox="0 0 100 100" aria-hidden="true"><path d="M50 88C20 66 10 44 22 28c9-11 22-8 28 4 6-12 19-15 28-4 12 16 2 38-28 60Z" fill="var(--bloom)"/><path d="M50 56c-2-14 2-24 10-32" stroke="#f3d66b" stroke-width="5" fill="none" stroke-linecap="round"/></svg>
-<h2>The finger test</h2>
-<p>Before you water, push a finger about 5 cm into the soil.</p>
-<ul><li><b>Dry and crumbly:</b> water slowly and deeply.</li><li><b>Cool and damp:</b> wait a day and check again.</li><li><b>Soggy:</b> stop watering and improve drainage.</li></ul>
-</aside>
-</section>
-
-<section id="crops">
-<h2>Crop guide</h2>
-<p class="sub">Choose a crop to see how to plant, water, feed and harvest it. These are general guidelines from the garden we worked in; local advice from a horticulture officer comes first.</p>
-<div class="tabs" role="tablist" id="cropTabs"></div>
-<div class="panel" id="cropPanel" role="tabpanel" aria-live="polite"></div>
-</section>
-
-<section id="pests">
-<h2>Pest and disease helper</h2>
-<p class="sub">Pick what you see on the plant. The helper suggests a likely cause and an organic first step.</p>
-<div class="panel">
-<label for="sym">What do you see?</label>
-<select id="sym"><option value="">Choose a symptom</option></select>
-<div class="result" id="pestResult" aria-live="polite"></div>
-</div>
-<div class="note"><b>Neem spray:</b> mix about 5 ml neem oil and a few drops of mild liquid soap into 1 litre of water. Test on a few leaves first, shake well, and spray in the evening. Repeat after 7 days if needed.</div>
-</section>
-
-<section id="journal">
-<h2>Field journal</h2>
-<p class="sub">1 June to 26 July 2026. Six weeks of daily garden work, taken from the weekly reports.</p>
-<ol class="weeks">
-<li><b>Week 1: Site study and planting</b>Surveyed beds, prepared soil with farmyard manure, laid drip lines, sowed seeds and transplanted seedlings.</li>
-<li><b>Week 2: Water and nutrients</b>Checked soil moisture, cleaned drip filters, applied compost and vermicompost, sprayed organic micronutrients and mulched.</li>
-<li><b>Week 3: Pests and diseases</b>Scouted leaf by leaf, sprayed neem oil, removed infected leaves, placed yellow sticky traps.</li>
-<li><b>Week 4: Upkeep</b>Weeded, pruned citrus and star fruit, staked young plants, removed banana suckers and repotted anthurium.</li>
-<li><b>Week 5: Harvest</b>Harvested mature fruit, graded, packed and stored it, kept harvest records and discussed market prices.</li>
-<li><b>Week 6: Community</b>Spoke with growers, held an awareness session on organic pest control and water saving on 8 July, and compiled the records.</li>
-</ol>
-</section>
-
-<section id="gallery">
-<h2>Photo gallery</h2>
-<p class="sub">Photos from the weekly activities. Choose a week to filter.</p>
-<div class="tabs" id="weekFilter"></div>
-<div class="grid" id="galleryGrid"></div>
-</section>
-
-<section id="contact">
-<h2>Contact</h2>
-<p class="sub">Have a question about plant care? Send a message.</p>
-<div class="panel" style="max-width:560px">
-<form id="cform" novalidate>
-<label for="cn">Name</label><input id="cn" autocomplete="name" required>
-<label for="ce">Email</label><input id="ce" type="email" autocomplete="email" required>
-<label for="cm">Message</label><textarea id="cm" rows="4" required></textarea>
-<div class="btns"><button class="btn" type="submit">Send message</button></div>
-<p id="cmsg" role="status" class="sub" style="margin-top:1rem"></p>
-</form>
-</div>
-</section>
-</main>
-<footer>Community Service Project · Sree Venkateswara College of Engineering, Nellore · 2026<br>This guide gives general advice for awareness. For serious crop problems, ask your local horticulture officer.</footer>
-
+<section class="detail" id="mainDetail"><div class="wrap"><button class="back" onclick="closeDetail()">← Back to HortiCare</button><div class="kicker">Main Project · 6 Weeks</div><h2>Horticulture</h2><p>Our main project focuses on practical learning and observation in horticulture, covering plant cultivation, nursery care, soil health, irrigation and sustainable practices.</p><div class="weeks-grid">
+<div class="week-card"><small>PROJECT FOCUS 01</small><h3>Plant cultivation</h3><p>Understanding plant varieties, growing conditions and basic cultivation practices.</p></div><div class="week-card"><small>PROJECT FOCUS 02</small><h3>Nursery practices</h3><p>Learning propagation, transplanting and routine nursery maintenance.</p></div><div class="week-card"><small>PROJECT FOCUS 03</small><h3>Soil & nutrition</h3><p>Observing soil preparation, organic manure and plant nutrition.</p></div><div class="week-card"><small>PROJECT FOCUS 04</small><h3>Irrigation</h3><p>Understanding watering methods, moisture needs and water conservation.</p></div><div class="week-card"><small>PROJECT FOCUS 05</small><h3>Plant health</h3><p>Identifying common plant stress signs and learning preventive care.</p></div><div class="week-card"><small>PROJECT FOCUS 06</small><h3>Sustainable practices</h3><p>Reflecting on responsible horticulture and environmentally friendly methods.</p></div>
+</div></div></section>
+<section class="detail" id="miniDetail"><div class="wrap"><button class="back" onclick="closeDetail()">← Back to HortiCare</button><div class="kicker">Mini Project · 2 Weeks</div><h2>Horticulture Crop Care Guide</h2><p>A compact digital learning resource that introduces simple, responsible crop-care practices for everyday plant health.</p><div class="weeks-grid"><div class="week-card"><small>WEEK 01</small><h3>Know your plant</h3><p>Explore basic plant needs, suitable growing conditions, soil preparation, sunlight and watering routines.</p></div><div class="week-card"><small>WEEK 02</small><h3>Care & maintenance</h3><p>Learn about nutrition, pruning, monitoring plant health, common problems and sustainable care habits.</p></div></div></div></section>
 <script>
-var CROPS={
-"Banana":{Planting:"Use healthy suckers or tissue-culture plants in pits enriched with farmyard manure. Plant in full sun with room between plants.",Watering:"Needs steady moisture. Drip lines work well; mulch the base to hold water.",Feeding:"Compost or vermicompost in a ring away from the stem. Repeat every two to three months.",Upkeep:"Remove extra suckers and keep one follower per clump. Cut dry leaves. Stake tall plants against wind.",Harvest:"Cut the bunch when the fingers look full and rounded and the ridges have softened. Handle gently.",Watch:"Yellow leaves from poor feeding, and waterlogging around the base."},
-"Citrus":{Planting:"Plant grafted saplings in well-drained soil and full sun. Keep the graft joint above the soil.",Watering:"Water deeply but not often. Never let water stand around the trunk.",Feeding:"Compost and vermicompost around the drip line, plus a leaf spray of organic micronutrients when leaves yellow.",Upkeep:"Prune dry, crowded and crossing branches for light and air. Remove weeds under the canopy.",Harvest:"Pick when the colour has changed and fruit feels heavy. Clip with the stalk rather than pulling.",Watch:"Aphids and leaf miner on new leaves, and leaf spots in humid weather."},
-"Star fruit":{Planting:"Choose a sunny spot with good drainage. Plant a healthy sapling and stake it for the first year.",Watering:"Regular water while young. Mulch to keep the roots cool.",Feeding:"Compost twice a year and a light organic feed during flowering.",Upkeep:"Light pruning after harvest to open the canopy. Remove fallen fruit and leaves.",Harvest:"Pick when ribs turn yellow with a little green. Handle carefully; the ribs bruise easily.",Watch:"Leaf spots, and a safety point: people with kidney disease should avoid star fruit."},
-"Anthurium":{Planting:"Pot in a loose, well-drained mix such as coco peat, charcoal and broken brick. Keep in shade.",Watering:"Water when the top of the mix feels dry. Keep humidity high with a damp floor or misting.",Feeding:"A light organic feed once a month. Too much fertiliser burns the roots.",Upkeep:"Repot when crowded. Remove old yellow leaves and spent flowers.",Harvest:"Cut flowers when the spathe is fully open and glossy, with a long stalk.",Watch:"Direct afternoon sun, which scorches leaves, and soggy mix, which rots roots."}
-};
-var tabs=document.getElementById("cropTabs"),panel=document.getElementById("cropPanel");
-function showCrop(n){
- [].forEach.call(tabs.children,function(b){b.setAttribute("aria-selected",b.textContent===n)});
- var o=CROPS[n],h="<h3>"+n+"</h3><dl>";
- for(var k in o){h+="<dt>"+k+"</dt><dd>"+o[k]+"</dd>"}
- panel.innerHTML=h+"</dl>";
-}
-Object.keys(CROPS).forEach(function(n,i){
- var b=document.createElement("button");b.className="tab";b.setAttribute("role","tab");b.textContent=n;
- b.onclick=function(){showCrop(n)};tabs.appendChild(b);
-});
-showCrop("Banana");
-
-var PESTS={
-"Yellow leaves":["Poor feeding, too much water, or a nutrient shortage.","Check the soil first. If it is soggy, improve drainage. If dry and pale, add compost or vermicompost and spray an organic micronutrient solution.","Feed on a regular schedule and water by soil moisture."],
-"Spots on leaves":["A fungal leaf spot, common in humid or wet weather.","Remove badly spotted leaves and dispose of them away from the beds. Spray an organic fungicide as a preventive measure, following the label.","Avoid wetting leaves late in the day and keep plants well spaced."],
-"Wilting plant":["Too little water, too much water, or root damage.","Do the finger test. Dry soil needs deep watering; soggy soil needs drainage. Dig a small hole and check that roots are white and firm.","Mulch to hold moisture and avoid water standing at the base."],
-"Small insects on new leaves":["Aphids feeding on soft growth.","Wash off with a firm water spray, then use neem spray in the evening. Repeat after 7 days.","Inspect new shoots every few days and use yellow sticky traps to monitor."],
-"Silvery trails inside leaves":["Leaf miner larvae tunnelling in the leaf.","Remove and destroy affected leaves, then spray neem oil on the new flush.","Protect young growth early and keep the area free of weeds."],
-"Weak growth and many weeds":["Weeds are competing for water and nutrients.","Weed by hand, add the weeds to the compost pit, and spread mulch of dry leaves or straw.","Weed and mulch on a fixed weekly routine."]
-};
-var sym=document.getElementById("sym"),pr=document.getElementById("pestResult");
-Object.keys(PESTS).forEach(function(k){var o=document.createElement("option");o.value=k;o.textContent=k;sym.appendChild(o)});
-sym.onchange=function(){
- var v=PESTS[sym.value];
- if(!v){pr.className="result";pr.innerHTML="";return}
- pr.className="result on";
- pr.innerHTML="<h3>"+sym.value+"</h3><dl><dt>Likely cause</dt><dd>"+v[0]+"</dd><dt>Organic remedy</dt><dd>"+v[1]+"</dd><dt>Prevention</dt><dd>"+v[2]+"</dd></dl>";
-};
-
-/* Gallery: put your photos in an "images" folder named wk1-1.jpg, wk1-2.jpg, wk1-3.jpg ... wk6-3.jpg */
-var CAP=["Surveying beds and crops","Cleaning drip filters and mulching","Scouting for pests and spots","Pruning and caring for plants","Harvest and grading","Talking with growers"];
-var items=[];
-for(var w=1;w<=6;w++){for(var p=1;p<=3;p++){items.push({w:w,src:"images/wk"+w+"-"+p+".jpg",cap:"Week "+w+": "+CAP[w-1]})}}
-var wf=document.getElementById("weekFilter"),gg=document.getElementById("galleryGrid"),cur=0;
-function drawGallery(){
- gg.innerHTML="";
- items.filter(function(i){return !cur||i.w===cur}).forEach(function(i){
-  var f=document.createElement("figure"),d=document.createElement("div"),im=new Image();
-  d.className="ph";im.alt=i.cap;im.src=i.src;im.loading="lazy";
-  im.onerror=function(){d.textContent="Add photo: "+i.src.replace("images/","")};
-  d.appendChild(im);f.appendChild(d);
-  var c=document.createElement("figcaption");c.textContent=i.cap;f.appendChild(c);gg.appendChild(f);
- });
-}
-["All"].concat([1,2,3,4,5,6].map(function(n){return "Week "+n})).forEach(function(t,i){
- var b=document.createElement("button");b.className="chip";b.textContent=t;b.setAttribute("aria-pressed",i===0);
- b.onclick=function(){cur=i;[].forEach.call(wf.children,function(x,j){x.setAttribute("aria-pressed",j===i)});drawGallery()};
- wf.appendChild(b);
-});
-drawGallery();
-
-/* Contact: opens the visitor's email app. Put your email address between the quotes. */
-var EMAIL="";
-document.getElementById("cform").onsubmit=function(e){
- e.preventDefault();
- var n=document.getElementById("cn").value.trim(),m=document.getElementById("ce").value.trim(),t=document.getElementById("cm").value.trim(),out=document.getElementById("cmsg");
- if(!n||!m||!t){out.textContent="Fill in your name, email and message, then send again.";return}
- if(!EMAIL){out.textContent="Thanks, "+n+". Messages are not connected yet. Ask the site owner to set the email address.";return}
- location.href="mailto:"+EMAIL+"?subject="+encodeURIComponent("Horticulture guide question from "+n)+"&body="+encodeURIComponent(t+"\n\nReply to: "+m);
- out.textContent="Opening your email app to send the message.";
-};
+function openDetail(which){document.getElementById('homePage').style.display='none';document.querySelectorAll('.detail').forEach(x=>x.classList.remove('active'));document.getElementById(which+'Detail').classList.add('active');window.scrollTo(0,0)}
+function closeDetail(){document.querySelectorAll('.detail').forEach(x=>x.classList.remove('active'));document.getElementById('homePage').style.display='block';window.scrollTo(0,0)}
+const gallery=document.getElementById('galleryGrid');
+for(let w=1;w<=6;w++){let img=document.createElement('img');img.src='images/wk'+w+'-1.jpg';img.alt='Horticulture field project photograph, week '+w;img.loading='lazy';gallery.appendChild(img)}
 </script>
-</body>
-</html>
+</body></html>
